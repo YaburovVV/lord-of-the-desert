@@ -187,7 +187,24 @@
    <cite>
     <subtitle>Сила мысли 7 Сила 12</subtitle>
    </cite>
-   <p>Если вы победили, не забудьте прибавить 1 к своей Силе мысли. При этом если она стала 4 — то <a l:href="#n_488"><strong>488</strong></a>, если 5 — то <a l:href="#n_10"><strong>10</strong></a>, если 6 — то <a l:href="#n_519"><strong>519</strong></a>, если 7 — то <a l:href="#n_100"><strong>100</strong></a>, если 8 — то <a l:href="#n_244"><strong>244</strong></a>, если 9 — то <a l:href="#n_350"><strong>350</strong></a>, если 10 — то <a l:href="#n_404"><strong>404</strong></a>. Посмотрите указанный параграф, не закрывая того, на котором находитесь. После этого вы можете захотеть использовать какие-то из имеющихся или же из вновь открывшихся телепатических способностей. Если те, которые открывает Сила мысли, равная 8, — то <a l:href="#n_490"><strong>490</strong></a>, если равная 9 — то <a l:href="#n_262"><strong>262</strong></a>, если равная 10 — то <a l:href="#n_134"><strong>134</strong></a>. В противном случае можете продолжить подъем по лестнице (<a l:href="#n_141"><strong>141</strong></a>) или вспомнить о волшебных ножнах (если они у вас есть) (<a l:href="#n_609"><strong>609</strong></a>). А может быть, стоит задержаться и попробовать найти тело невидимого стража (<a l:href="#n_35"><strong>35</strong></a>)?</p>
+   <p>(Посмотрите указанный параграф, не закрывая того, на котором находитесь.) После этого вы можете захотеть использовать какие-то из имеющихся или же из вновь открывшихся телепатических способностей. В противном случае можете продолжить подъем по лестнице или вспомнить о волшебных ножнах (если они у вас есть). А может быть, стоит задержаться и попробовать найти тело невидимого стража?</p>
+    <actions>
+      <monster thoughtPower="7" strength="12">НЕВИДИМЫЙ СТРАЖ</monster>
+      <event effect="character.thoughtPower+1">+1 сила мысли</event>
+      <eventLink when="character.thoughtPower == 4" goto="#n_488"/>
+      <eventLink when="character.thoughtPower == 5" goto="#n_10"/>
+      <eventLink when="character.thoughtPower == 6" goto="#n_519"/>
+      <eventLink when="character.thoughtPower == 7" goto="#n_100"/>
+      <eventLink when="character.thoughtPower == 8" goto="#n_244"/>
+      <eventLink when="character.thoughtPower == 9" goto="#n_350"/>
+      <eventLink when="character.thoughtPower == 10" goto="#n_404"/>
+      <choseLink when="character.thoughtPower == 8" goto="#n_490">телепатия</choseLink>
+      <choseLink when="character.thoughtPower == 9" goto="#n_262">телепатия</choseLink>
+      <choseLink when="character.thoughtPower == 10" goto="#n_134">телепатия</choseLink>
+      <choseLink goto="#n_141">лестница</choseLink>
+      <choseLink when="inventory.magicScabbard == true" goto="#n_609">волшебные ножны</choseLink>
+      <choseLink goto="#n_35">тело стража</choseLink>
+    </actions>
   </section>
   <section id="n_17">
    <title>
