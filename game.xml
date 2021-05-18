@@ -69,7 +69,19 @@
    <title>
     <p>6</p>
    </title>
-   <p>Вот уже несколько сот ступеней позади, еще три-четыре площадки, и дойдете до конца. Внезапно что-то острое касается вашей груди и голос, который кажется голосом самой величественной лестницы, настолько он властный и глубокий, спрашивает: «Кто ты, осмелившийся потревожить покой Вечных ступеней?» Решение надо принимать как можно быстрее. Ответите, что ищете хозяина скалы (<a l:href="#n_484"><strong>484</strong></a>), назоветесь любопытным путешественником (<a l:href="#n_240"><strong>240</strong></a>), пойдете дальше (<a l:href="#n_501"><strong>501</strong></a>) или воспользуетесь своей Силой мысли. В последнем случае, какова она — три (<a l:href="#n_356"><strong>356</strong></a>), четыре (<a l:href="#n_493"><strong>493</strong></a>), пять (<a l:href="#n_416"><strong>416</strong></a>), шесть (<a l:href="#n_510"><strong>510</strong></a>), семь (<a l:href="#n_102"><strong>102</strong></a>), восемь (<a l:href="#n_364"><strong>364</strong></a>) или девять (<a l:href="#n_539"><strong>539</strong></a>)?</p>
+   <p>Вот уже несколько сот ступеней позади, еще три-четыре площадки, и дойдете до конца. Внезапно что-то острое касается вашей груди и голос, который кажется голосом самой величественной лестницы, настолько он властный и глубокий, спрашивает: «Кто ты, осмелившийся потревожить покой Вечных ступеней?» Решение надо принимать как можно быстрее. Ответите, что</p>
+    <actions>
+      <choseLink goto="#n_484">ищете хозяина скалы</choseLink>
+      <choseLink goto="#n_240">назоветесь любопытным путешественником</choseLink>
+      <choseLink goto="#n_501">пойдете дальше</choseLink>
+      <atack when="character.thoughtPower == 3" goto="#n_356"/>
+      <atack when="character.thoughtPower == 4" goto="#n_493"/>
+      <atack when="character.thoughtPower == 5" goto="#n_416"/>
+      <atack when="character.thoughtPower == 6" goto="#n_510"/>
+      <atack when="character.thoughtPower == 7" goto="#n_102"/>
+      <atack when="character.thoughtPower == 8" goto="#n_364"/>
+      <atack when="character.thoughtPower == 9" goto="#n_539"/>
+    </actions>
   </section>
   <section id="n_7">
    <title>
