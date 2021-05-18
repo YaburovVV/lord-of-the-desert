@@ -80,13 +80,15 @@
       <choseLink goto="#n_484">ищу хозяина скалы</choseLink>
       <choseLink goto="#n_240">я путешественник</choseLink>
       <choseLink goto="#n_501">пойду дальше</choseLink>
-      <atack when="character.thoughtPower == 3" goto="#n_356"/>
-      <atack when="character.thoughtPower == 4" goto="#n_493"/>
-      <atack when="character.thoughtPower == 5" goto="#n_416"/>
-      <atack when="character.thoughtPower == 6" goto="#n_510"/>
-      <atack when="character.thoughtPower == 7" goto="#n_102"/>
-      <atack when="character.thoughtPower == 8" goto="#n_364"/>
-      <atack when="character.thoughtPower == 9" goto="#n_539"/>
+      <choseAtack by="thoughtPower">
+        <condition when="character.thoughtPower == 3" goto="#n_356"/>
+        <condition when="character.thoughtPower == 4" goto="#n_493"/>
+        <condition when="character.thoughtPower == 5" goto="#n_416"/>
+        <condition when="character.thoughtPower == 6" goto="#n_510"/>
+        <condition when="character.thoughtPower == 7" goto="#n_102"/>
+        <condition when="character.thoughtPower == 8" goto="#n_364"/>
+        <condition when="character.thoughtPower == 9" goto="#n_539"/>
+      </choseAtack>
     </actions>
   </section>
   <section id="n_7">
