@@ -243,7 +243,12 @@
    <title>
     <p>20</p>
    </title>
-   <p>Ночь приносит желанный отдых (можете восстановить 2 СИЛЫ), а утром решайте, куда идти дальше. На северо-восток — <a l:href="#n_116"><strong>116</strong></a>. На юго-восток — <a l:href="#n_93"><strong>93</strong></a>.</p>
+   <p>Ночь приносит желанный отдых (можете восстановить 2 СИЛЫ), а утром решайте, куда идти дальше. На северо-восток или на юго-восток.</p>
+    <actions>
+      <event effect="character.strength+2">+2 силы</event>
+      <choseLink goto="#n_116">на северо-восток</choseLink>
+      <choseLink goto="#n_93">на юго-восток</choseLink>
+    </actions>
   </section>
   <section id="n_21">
    <title>
