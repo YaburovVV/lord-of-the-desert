@@ -33,7 +33,7 @@ public class Main {
     try {
       Document document = builder.parse(new FileInputStream(scenarioPath));
       Element rootElement = document.getDocumentElement();
-      ArrayList<Element> sectionElements = getChildrenElements(rootElement);
+      ArrayList<Element> sectionElements = getChildrenElements(rootElement, .2f);
 
       sectionElements.forEach(section -> {
         Section sec = new Section(section.getAttribute("id"));
@@ -55,15 +55,6 @@ public class Main {
         scenario.add(sec);
       });
       NodeList secNodes = rootElement.getChildNodes();
-
-
-      for (int i = 0; i < secNodes.getLength() - 30; i++) {
-        Node secNode = secNodes.item(i);
-        if (secNode instanceof Element) {
-          Element secEl = (Element) secNode;
-
-        }
-      }
     } catch (SAXException | IOException e) {
       e.printStackTrace();
     }
