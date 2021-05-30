@@ -17,6 +17,15 @@ public abstract class Action {
       case "event":
         resultAction = Event.parseSpecific(actionElement);
         break;
+      case "failed":
+        resultAction = new Failed();
+        break;
+      case "monster":
+        resultAction = Monster.parseSpecific(actionElement);
+        break;
+      case "eventLink":
+        resultAction = EventLink.parseSpecific(actionElement);
+        break;
       default:
         throw new RuntimeException(String.format("Unknown action type \"%s\"!", actionElement.getTagName()));
     }
