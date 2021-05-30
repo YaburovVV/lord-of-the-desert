@@ -11,5 +11,7 @@
     <event effect="inventory.gold+3">+3 золота</event>
     <event effect="inventory.loseOne(x) || inventory.lose('food',1)">пропал(а) {x}</event>
     <event effect="character.strength-4">урон</event>
+    <monster thoughtPower="7" strength="12">НЕВИДИМЫЙ СТРАЖ</monster>
+    <eventLink when="character.thoughtPower == 4" goto="#n_5"/>
     <failed/>
 </body>
