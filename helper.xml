@@ -1,12 +1,14 @@
-<actions>
-  <choseLink goto="#n_478">к разбойникам</choseLink>
-  <choseLink when="character.thoughtPower == 3" goto="#n_356">атаковать силой мысли</choseLink>
-  <option effect="inventory.gold-2,character.strength+4">купить еды</option>
-  <event effect="inventory.food=0">пропала еда</event>
-  <event effect="inventory.loseOne(x)">пропал(а) {x}</event>
-  <event effect="inventory.loseOne(x) || inventory.lose('food',1)">пропал(а) {x}</event>
-  <event effect="inventory.itemLimit=2">только две вещи</event>
-  <event effect="inventory.gold+3">+3 золота</event>
-  <event effect="character.strength-4">урон</event>
-  <failed/>
-</actions>
+<body>
+    <choseLink goto="#n_89">На северо-восток</choseLink>
+    <option effect="inventory.gold-2,character.strength+4">купить еды</option>
+    <event effect="inventory.food=0">пропала еда</event>
+    <event effect="inventory.loseOne(x)">пропал(а) {x}</event>
+    <event effect="inventory.itemLimit=2">только две вещи</event>
+    <event effect="inventory.gold+3">+3 золота</event>
+    <event effect="inventory.loseOne(x) || inventory.lose('food',1)">пропал(а) {x}</event>
+    <event effect="character.strength-4">урон</event>
+    <choseLink when="character.thoughtPower == 9" goto="#n_262">телепатия</choseLink>
+    <choseLink when="character.thoughtPower == 3" goto="#n_356">атаковать силой мысли</choseLink>
+    <choseLink when="inventory.emeraldsBracelet == true" goto="#n_405">использовать браслет с изумрудами</choseLink>
+    <choseLink goto="#back">вернуться</choseLink>
+</body>
