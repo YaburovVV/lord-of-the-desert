@@ -9,14 +9,16 @@ public class Section {
   public String id;
   public String title;
   public String plot = "";
-  ArrayList<Action> actions;
+  public ArrayList<Action> actions;
 
   public Section(String id) {
     this.id = id;
+    this.actions = new ArrayList<>();
   }
 
   public void print() {
-    Print.print("\t" + title + "\t" + id);
+    Print.print("---\n\t" + title + "\t" + id);
     Print.print(plot);
+    actions.forEach(action -> action.print());
   }
 }

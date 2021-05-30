@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.scenario.Section;
+import com.company.scenario.actions.Action;
 import org.w3c.dom.*;
 
 import javax.xml.parsers.*;
@@ -33,26 +34,29 @@ public class Main {
     try {
       Document document = builder.parse(new FileInputStream(scenarioPath));
       Element rootElement = document.getDocumentElement();
-      ArrayList<Element> sectionElements = getChildrenElements(rootElement, .2f);
+      ArrayList<Element> sectionElements = getChildrenElements(rootElement, .5f);
 
       sectionElements.forEach(section -> {
-        Section sec = new Section(section.getAttribute("id"));
+        Section sections = new Section(section.getAttribute("id"));
         ArrayList<Element> partSecElements = getChildrenElements(section);
 
         partSecElements.forEach(sectionPart -> {
           switch (sectionPart.getTagName()) {
             case "p":
-              sec.plot += sectionPart.getTextContent() + "\n";
+              sections.plot += sectionPart.getTextContent() + "\n";
               break;
             case "title":
-              sec.title = sectionPart.getTextContent().trim();
+              sections.title = sectionPart.getTextContent().trim();
               break;
             case "actions":
               ArrayList<Element> actionsList = getChildrenElements(sectionPart);
-              actionsList.forEach(action -> Print.print(action.getTextContent()));
+              actionsList.forEach(actionElement -> {
+                Action act = Action.parse(actionElement);
+                sections.actions.add(act);
+              });
           }
         });
-        scenario.add(sec);
+        scenario.add(sections);
       });
       NodeList secNodes = rootElement.getChildNodes();
     } catch (SAXException | IOException e) {
