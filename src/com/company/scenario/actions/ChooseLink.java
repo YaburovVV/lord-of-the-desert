@@ -28,6 +28,6 @@ public class ChooseLink extends Action {
 
   @Override
   public void print() {
-    Print.print(String.format("ChooseLink - %s - %s - %s",text, gotoId, when));
+    Print.print(String.format("\tChooseLink - %s - %s - %s",text, gotoId, when));
   }
 }
