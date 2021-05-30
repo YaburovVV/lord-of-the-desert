@@ -18,7 +18,7 @@ public abstract class Action {
         resultAction = Event.parseSpecific(actionElement);
         break;
       default:
-        resultAction = null;
+        throw new RuntimeException(String.format("Unknown action type \"%s\"!", actionElement.getTagName()));
     }
     return resultAction;
   }
