@@ -50,8 +50,9 @@ public class ScenarioXmlParser {
     NodeList childNodes = parentNode.getChildNodes();
     for (int i = 0; i < childNodes.getLength() * ratio; i++) {
       Node childNode = childNodes.item(i);
-      if (childNode instanceof Element childElement) {
-          resultElements.add(childElement);
+        if (childNode instanceof Element) {
+            Element childElement = (Element) childNode;
+            resultElements.add(childElement);
       }
     }
     return resultElements;
@@ -62,5 +63,12 @@ public class ScenarioXmlParser {
     LSSerializer lsSerializer = lsImpl.createLSSerializer();
     lsSerializer.getDomConfig().setParameter("xml-declaration", false);
       return lsSerializer.writeToString(node);
+  }
+
+  public static String getTextContentWithXml(Element element) {
+      String xml = getInnerXML(element);
+      xml = xml.replaceAll(String.format("^<%s>", element.getTagName()),"")
+              .replaceAll(String.format("</%s>$", element.getTagName()),"");
+      return xml;
   }
 }

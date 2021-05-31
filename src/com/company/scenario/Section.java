@@ -7,6 +7,7 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 
 import static com.company.ScenarioXmlParser.getChildrenElements;
+import static com.company.ScenarioXmlParser.getTextContentWithXml;
 
 public class Section {
   public String id;
