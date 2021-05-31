@@ -18,7 +18,7 @@ public class Scenario {
   public static Scenario parse(Element rootElement) {
 
     Scenario scenario = new Scenario();
-    ArrayList<Element> sectionElements = getChildrenElements(rootElement, 1f);
+    ArrayList<Element> sectionElements = getChildrenElements(rootElement, 0.1f);
 
     sectionElements.forEach(sectionElement -> {
       Section section = Section.parse(sectionElement);
