@@ -9,7 +9,7 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Scenario scenario = loadScenario("game-short.xml");
+    Scenario scenario = loadScenario("game.xml");
 //    Print scenario to console
     scenario.print();
   }
