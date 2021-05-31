@@ -28,7 +28,7 @@ public class Section {
     partSecElements.forEach(sectionPart -> {
       switch (sectionPart.getTagName()) {
         case "p":
-          section.plot += sectionPart.getTextContent() + "\n";
+          section.plot += getTextContentWithXml(sectionPart) + "\n";
           break;
         case "title":
           section.title = sectionPart.getTextContent().trim();
