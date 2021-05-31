@@ -5,6 +5,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -48,11 +50,17 @@ public class ScenarioXmlParser {
     NodeList childNodes = parentNode.getChildNodes();
     for (int i = 0; i < childNodes.getLength() * ratio; i++) {
       Node childNode = childNodes.item(i);
-      if (childNode instanceof Element) {
-        Element childElement = (Element) childNode;
-        resultElements.add(childElement);
+      if (childNode instanceof Element childElement) {
+          resultElements.add(childElement);
       }
     }
     return resultElements;
+  }
+
+  public static String getInnerXML(Node node) {
+    DOMImplementationLS lsImpl = (DOMImplementationLS)node.getOwnerDocument().getImplementation().getFeature("LS", "3.0");
+    LSSerializer lsSerializer = lsImpl.createLSSerializer();
+    lsSerializer.getDomConfig().setParameter("xml-declaration", false);
+      return lsSerializer.writeToString(node);
   }
 }
