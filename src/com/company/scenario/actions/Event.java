@@ -24,6 +24,6 @@ public class Event extends Action {
 
   @Override
   public void print() {
-    Print.print(String.format("\tEvent - %s - %s", text, effect));
+    Print.print(String.format("\tEvent | %s | %s", text, effect));
   }
 }

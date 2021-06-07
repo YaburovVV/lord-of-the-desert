@@ -26,6 +26,6 @@ public class EventLink extends Action {
 
   @Override
   public void print() {
-    Print.print(String.format("\tEventLink - %s - %s", gotoLink, when));
+    Print.print(String.format("\tEventLink | %s | %s", gotoLink, when));
   }
 }

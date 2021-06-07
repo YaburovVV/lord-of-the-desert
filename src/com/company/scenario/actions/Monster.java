@@ -29,6 +29,6 @@ public class Monster extends Action{
 
   @Override
   public void print() {
-    Print.print(String.format("\tMonster - thoughtPower %s - strength %s", thoughtPower, strength));
+    Print.print(String.format("\tMonster | thoughtPower %s | strength %s", thoughtPower, strength));
   }
 }

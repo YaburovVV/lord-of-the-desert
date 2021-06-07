@@ -24,6 +24,6 @@ public class Option extends Action {
 
   @Override
   public void print() {
-    Print.print(String.format("\tOption - %s - %s", text, effect));
+    Print.print(String.format("\tOption | %s | %s", text, effect));
   }
 }
