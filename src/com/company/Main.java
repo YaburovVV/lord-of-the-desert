@@ -9,8 +9,11 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Scenario scenario = loadScenario("game.xml");
+    Scenario scenario = loadScenario("game-short.xml");
 //    Print scenario to console
     scenario.print();
+
+//    scenario.get(1).print();
+
   }
 }

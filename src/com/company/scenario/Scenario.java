@@ -11,6 +11,10 @@ public class Scenario {
 
   ArrayList<Section> content;
 
+  public Section get(int index) {
+    return content.get(index);
+  }
+
   public Scenario() {
     content = new ArrayList<>();
   }
