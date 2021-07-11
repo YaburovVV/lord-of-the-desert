@@ -11,9 +11,9 @@ public class Main {
 
     Scenario scenario = loadScenario("game-short.xml");
 //    Print scenario to console
-    scenario.print();
-
-//    scenario.get(1).print();
+//    scenario.print();
+//    to xml
+    scenario.get(1).print();
 
   }
 }
