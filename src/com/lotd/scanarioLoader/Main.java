@@ -12,7 +12,8 @@ public class Main {
 //    scenario.print();
 //    to xml
 
-    Print.print(FormatSaver.toXML(scenario));
+    Print.print(new FormatSaver().toXML(scenario));
+    Print.print(new FormatSaver().toJSON(scenario));
 
   }
 }
