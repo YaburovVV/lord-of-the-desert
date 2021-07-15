@@ -6,6 +6,10 @@ import com.lotd.scanarioLoader.scenario.actions.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class FormatSaver {
 
   XStream xstream;
@@ -26,6 +30,16 @@ public class FormatSaver {
     xstream.processAnnotations(Monster.class);
     xstream.processAnnotations(Option.class);
     xstream.processAnnotations(UnrecognizedLink.class);
-    return xstream.toXML(object);
+    String xmlContent = xstream.toXML(object);
+    BufferedWriter writer = null;
+    try {
+      writer = new BufferedWriter(new FileWriter("ScenarioXml.xml"));
+      writer.write(xmlContent);
+
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return xmlContent;
   }
 }
