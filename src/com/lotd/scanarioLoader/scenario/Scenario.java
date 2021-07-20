@@ -5,7 +5,7 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import static com.lotd.scanarioLoader.ScenarioXmlParser.getChildrenElements;
 
-@XStreamAlias("section")
+@XStreamAlias("scenario")
 public class Scenario {
 
   ArrayList<Section> content;
