@@ -4,8 +4,8 @@ import com.lotd.scanarioLoader.scenario.Scenario;
 import com.lotd.scanarioLoader.scenario.Section;
 import com.lotd.scanarioLoader.scenario.actions.*;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -28,7 +28,7 @@ public class FormatSaver {
     xstreamXml.processAnnotations(Monster.class);
     xstreamXml.processAnnotations(Option.class);
     xstreamXml.processAnnotations(UnrecognizedLink.class);
-    xstreamJson = new XStream(new JsonHierarchicalStreamDriver());
+    xstreamJson = new XStream(new JettisonMappedXmlDriver());
     xstreamJson.processAnnotations(Section.class);
     xstreamJson.processAnnotations(Scenario.class);
     xstreamJson.processAnnotations(Section.class);

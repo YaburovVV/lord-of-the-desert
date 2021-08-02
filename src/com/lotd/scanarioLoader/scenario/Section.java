@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 import static com.lotd.scanarioLoader.ScenarioXmlParser.getChildrenElements;
 import static com.lotd.scanarioLoader.ScenarioXmlParser.getTextContentWithXml;
 
-@XStreamAlias("section")
+@XStreamAlias("paragraph")
 public class Section {
   public String id;
   public String title;
