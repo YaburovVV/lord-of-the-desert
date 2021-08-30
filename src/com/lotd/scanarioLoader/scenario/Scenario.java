@@ -3,7 +3,9 @@ package com.lotd.scanarioLoader.scenario;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import org.w3c.dom.Element;
+
 import java.util.ArrayList;
+
 import static com.lotd.scanarioLoader.ScenarioXmlParser.getChildrenElements;
 
 @XStreamAlias("scenario")
