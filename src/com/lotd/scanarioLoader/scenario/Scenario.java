@@ -1,17 +1,19 @@
 package com.lotd.scanarioLoader.scenario;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import org.w3c.dom.Element;
 import java.util.ArrayList;
 import static com.lotd.scanarioLoader.ScenarioXmlParser.getChildrenElements;
 
-@XStreamAlias("scenario")
 public class Scenario {
 
-  @XStreamImplicit
+//  @SerializedName("cont")
   ArrayList<Section> content;
 
+  @SerializedName("section")
   public Section get(int index) {
     return content.get(index);
   }
