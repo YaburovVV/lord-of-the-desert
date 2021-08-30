@@ -12,9 +12,9 @@ import static com.lotd.scanarioLoader.ScenarioXmlParser.getChildrenElements;
 public class Scenario {
 
   @XStreamImplicit
-  ArrayList<Section> content;
+  ArrayList<Paragraph> content;
 
-  public Section get(int index) {
+  public Paragraph get(int index) {
     return content.get(index);
   }
 
@@ -28,13 +28,13 @@ public class Scenario {
     ArrayList<Element> sectionElements = getChildrenElements(rootElement, 1f);
 
     sectionElements.forEach(sectionElement -> {
-      Section section = Section.parse(sectionElement);
-      scenario.content.add(section);
+      Paragraph paragraph = Paragraph.parse(sectionElement);
+      scenario.content.add(paragraph);
     });
     return scenario;
   }
 
   public void print() {
-    content.forEach(Section::print);
+    content.forEach(Paragraph::print);
   }
 }

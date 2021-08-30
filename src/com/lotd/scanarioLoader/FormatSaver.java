@@ -1,7 +1,7 @@
 package com.lotd.scanarioLoader;
 
+import com.lotd.scanarioLoader.scenario.Paragraph;
 import com.lotd.scanarioLoader.scenario.Scenario;
-import com.lotd.scanarioLoader.scenario.Section;
 import com.lotd.scanarioLoader.scenario.actions.*;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
@@ -18,9 +18,8 @@ public class FormatSaver {
 
   public FormatSaver() {
     xstreamXml = new XStream(new StaxDriver());
-    xstreamXml.processAnnotations(Section.class);
+    xstreamXml.processAnnotations(Paragraph.class);
     xstreamXml.processAnnotations(Scenario.class);
-    xstreamXml.processAnnotations(Section.class);
     xstreamXml.processAnnotations(ChooseLink.class);
     xstreamXml.processAnnotations(Event.class);
     xstreamXml.processAnnotations(EventLink.class);
@@ -29,9 +28,8 @@ public class FormatSaver {
     xstreamXml.processAnnotations(Option.class);
     xstreamXml.processAnnotations(UnrecognizedLink.class);
     xstreamJson = new XStream(new JettisonMappedXmlDriver());
-    xstreamJson.processAnnotations(Section.class);
+    xstreamJson.processAnnotations(Paragraph.class);
     xstreamJson.processAnnotations(Scenario.class);
-    xstreamJson.processAnnotations(Section.class);
     xstreamJson.processAnnotations(ChooseLink.class);
     xstreamJson.processAnnotations(Event.class);
     xstreamJson.processAnnotations(EventLink.class);

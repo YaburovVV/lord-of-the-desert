@@ -16,20 +16,20 @@ import static com.lotd.scanarioLoader.ScenarioXmlParser.getChildrenElements;
 import static com.lotd.scanarioLoader.ScenarioXmlParser.getTextContentWithXml;
 
 @XStreamAlias("paragraph")
-public class Section {
+public class Paragraph {
   public String id;
   public String title;
   public String plot = "";
   public ArrayList<Action> actions;
 
-  public Section(String id) {
+  public Paragraph(String id) {
     this.id = id;
     this.actions = new ArrayList<>();
   }
 
-  public static Section parse(Element sectionElement) {
+  public static Paragraph parse(Element sectionElement) {
 
-    Section section = new Section(sectionElement.getAttribute("id"));
+    Paragraph paragraph = new Paragraph(sectionElement.getAttribute("id"));
     ArrayList<Element> partSecElements = getChildrenElements(sectionElement);
 
     partSecElements.forEach(sectionPart -> {
@@ -37,26 +37,26 @@ public class Section {
         case "p":
           String plotPart = getTextContentWithXml(sectionPart);
           ArrayList<Action> acts = extractLinks(plotPart);
-          section.actions.addAll(acts);
-          section.plot += plotPart + "\n";
+          paragraph.actions.addAll(acts);
+          paragraph.plot += plotPart + "\n";
           break;
         case "title":
-          section.title = sectionPart.getTextContent().trim();
+          paragraph.title = sectionPart.getTextContent().trim();
           break;
         case "actions":
           ArrayList<Element> actionsList = getChildrenElements(sectionPart);
           actionsList.forEach(actionElement -> {
             Action act = Action.parse(actionElement);
-            section.actions.add(act);
+            paragraph.actions.add(act);
           });
       }
     });
-    return section;
+    return paragraph;
   }
 
   public String toXML() {
     XStream xstream = new XStream(new StaxDriver());
-    xstream.processAnnotations(Section.class);
+    xstream.processAnnotations(Paragraph.class);
     return xstream.toXML(this);
   }
 
